@@ -8,19 +8,34 @@ const Features = () => {
 	const featureArray: Feature[] = [
 		{
 			title: 'Scheduling Tools',
-			desc: 'Manage staff, shifts and budgets with ease.',
+			desc: 'Manage staff, shifts and budgets with ease. Utilize preset shifts and weeks to save your company time and money.',
 			imgSrc: '/cobalt-presets-view.png',
 		},
 		{
-			title: 'Data Dashboard',
+			title: 'Analytics Dashboards',
 			desc: 'Real-time insights into your operations and performance.',
 			imgSrc: '/cobalt-data-view.png',
 		},
 		{
-			title: 'Compliance Automation',
-			desc: 'Ensure tasks and safety checks are always completed.',
-			imgSrc: '/cobalt-compliance-view.png'
+			title: 'Facilties Schedules',
+			desc: 'Live schedules for facilities ranging from pools and studios to gyms and activity spaces.',
+			imgSrc: '/cobalt-facilities-schedule-view.png',
 		},
+		{
+			title: 'Compliance Automation',
+			desc: 'Ensure tasks and safety checks are always completed. Unlock productivity through gamification.',
+			imgSrc: '/cobalt-compliance-view.png',
+		},
+		{
+			title: 'Functional Layouts',
+			desc: 'Access all the most important information in one streamlined page, designed for quick insights and efficient decision-making.',
+			imgSrc: '/cobalt-club-info-view.png'
+		},
+		{
+			title: 'Tailored Solutions',
+			desc: 'Software should adapt to your business—not the other way around. Get solutions built around your unique workflows, goals and challenges.',
+			imgSrc: '/cobalt-consulting-pic.jpg'
+		}
 	];
 
 	return (
@@ -31,15 +46,21 @@ const Features = () => {
 					Tools that simplify operations and help you grow
 				</p>
 			</div>
-			<div className='grid md:grid-cols-3 gap-10 max-w-6xl mx-auto'>
+			<div className='grid md:grid-cols-3 gap-10 max-w-3/4 mx-auto'>
 				{featureArray.map(({ title, desc, imgSrc }) => (
 					<div
 						key={title}
-						className='bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition'
+						className='flex flex-col bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition'
 					>
-						<h3 className='text-xl font-semibold mb-2'>{title}</h3>
-						<p className='text-grey'>{desc}</p>
-                        <img src={imgSrc} draggable={false} />
+						<div className="mb-2">
+							<h3 className='text-xl font-semibold mb-2'>{title}</h3>
+							<p className='text-grey'>{desc}</p>
+						</div>
+						<div className='flex items-center flex-1'>
+							<div className="rounded-lg overflow-hidden shadow-sm">
+								<img src={imgSrc} draggable={false} />
+							</div>
+						</div>
 					</div>
 				))}
 			</div>
