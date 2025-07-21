@@ -19,11 +19,12 @@ const Features = () => {
 		{
 			title: 'Compliance Automation',
 			desc: 'Ensure tasks and safety checks are always completed.',
+			imgSrc: '/cobalt-compliance-view.png'
 		},
 	];
 
 	return (
-		<section id='features' className='py-20 bg-white text-dark px-6'>
+		<section id='features' className='py-30 bg-white text-dark px-6'>
 			<div className='text-center mb-16'>
 				<h2 className='text-3xl text-cobalt font-bold'>What We Offer</h2>
 				<p className='text-grey mt-2'>
@@ -38,7 +39,7 @@ const Features = () => {
 					>
 						<h3 className='text-xl font-semibold mb-2'>{title}</h3>
 						<p className='text-grey'>{desc}</p>
-                        <img src={imgSrc} />
+                        <img src={imgSrc} draggable={false} />
 					</div>
 				))}
 			</div>

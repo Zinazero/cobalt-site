@@ -1,6 +1,19 @@
-import { buttonVariants } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
+import type { RequestDemoProps } from '@/types';
 
-const Hero = () => {
+const Hero = ({ setIsRequestDemo }: RequestDemoProps) => {
+
+	const goToDemoForm = () => {
+		setIsRequestDemo(true);
+		setTimeout(() => {
+			window.scrollTo({
+				top: document.documentElement.scrollHeight,
+				behavior: 'smooth',
+			});
+		}, 0);
+		window.history.pushState(null, '', '/#contact');
+	};
+
 	return (
 		<section className='relative bg-light min-h-screen flex items-center overflow-hidden'>
 			{/* Image */}
@@ -9,6 +22,7 @@ const Hero = () => {
 					src='/cobalt-primary-view.png'
 					alt='App preview'
 					className='h-full w-full object-contain opacity-30'
+					draggable={false}
 				/>
 			</div>
 
@@ -24,22 +38,23 @@ const Hero = () => {
 						streamline your operations and unlock growth.
 					</p>
 					<div className='flex justify-center lg:justify-start gap-4'>
-						<a
-							href='#demo'
-							className={`${buttonVariants({
-								variant: 'default',
-							})} bg-cobalt text-white px-6 py-3 rounded-md shadow hover:bg-cobalt-hover transition`}
-						>
-							Request a Demo
-						</a>
-						<a
-							href='#features'
-							className={`${buttonVariants({
-								variant: 'default',
-							})} text-cobalt border border-cobalt px-6 py-3 rounded-md hover:bg-cobalt-hover hover:border-cobalt-hover hover:text-white transition`}
-						>
-							Learn More
-						</a>
+						<Button asChild>
+							<a
+								href='#contact'
+								onClick={() => goToDemoForm()}
+								className={` bg-cobalt text-white px-6 py-3 rounded-md shadow hover:bg-cobalt-hover transition`}
+							>
+								Request a Demo
+							</a>
+						</Button>
+						<Button asChild>
+							<a
+								href='#features'
+								className={` text-cobalt border border-cobalt px-6 py-3 rounded-md hover:bg-cobalt-hover hover:border-cobalt-hover hover:text-white transition`}
+							>
+								Learn More
+							</a>
+						</Button>
 					</div>
 				</div>
 			</div>
