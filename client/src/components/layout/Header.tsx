@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
-import type { RequestDemoProps } from '@/types';
+import { Button } from '../../components/ui/button';
+import type { RequestDemoProps } from '../../types';
 
 const Header = ({ setIsRequestDemo }: RequestDemoProps) => {
 	const onLogoClick = () => {

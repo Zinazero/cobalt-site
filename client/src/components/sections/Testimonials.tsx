@@ -9,6 +9,13 @@ const Testimonials = () => {
 	const quoteArray: Testimonial[] = [
 		{
 			quote:
+				'Working with Jacob to implement and tailor the Cobalt platform for our business was an exciting experience. He took the time to understand our needs and delivered a powerful solution that improved efficiency, provided tailored user experiences and gave managers valuable tools and analytics. His responsiveness and built-in feedback tools made the process smooth. I look forward to working with Cobalt again.',
+			name: 'Michela Doran',
+			title: 'Area Director',
+			location: 'MOVATI Athletic'
+		},
+		{
+			quote:
 				'Cobalt has been a true game-changer. I can now complete monthly schedules in under 30 minutes, staff instantly see updates on mobile and our supervisor team saves 1–2 hours every week thanks to automated snapshot generation. I can quickly assess and adjust staffing levels to stay within budget.',
 			name: 'Ethan White',
 			title: 'Experience Manager',
@@ -50,7 +57,7 @@ const Testimonials = () => {
 									: 'max-w-lg'
 							}`}
 						>
-							<p className='italic text-grey-dark mb-4'>"{quote}"</p>
+							<p className='italic text-grey-dark mb-4'>{quote}</p>
 							<div>
 								<p className='font-semibold text-dark'>{name}</p>
 								<p className='text-sm text-muted-foreground'>
