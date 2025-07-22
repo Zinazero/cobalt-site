@@ -23,7 +23,7 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 		const endpoint = `/api/${type}`;
 
 		const data = Object.fromEntries(formData.entries()) as Record<string, string>;
-		console.log(endpoint, data);
+
 		try {
 			await axios.post(endpoint, data);
 			form.reset();
