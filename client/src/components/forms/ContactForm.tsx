@@ -8,20 +8,20 @@ const ContactForm = ({ handleContactSubmit }: FormSubmitProps) => {
 		{
 			tag: 'input',
 			type: 'text',
-			name: 'name',
+			name: 'Name',
 			placeholder: 'Your Name',
 			required: true,
 		},
 		{
 			tag: 'input',
 			type: 'email',
-			name: 'email',
+			name: 'Email',
 			placeholder: 'Email Address',
 			required: true,
 		},
 		{
 			tag: 'textarea',
-			name: 'message',
+			name: 'Message',
 			placeholder: 'How can we help?',
 			rows: 4,
 			required: true,

@@ -3,6 +3,8 @@ import ContactForm from '../forms/ContactForm';
 import DemoForm from '../forms/DemoForm';
 import type { FormSubmitHandler, RequestDemoProps } from '../../types';
 import axios from 'axios';
+import { render, pretty } from '@react-email/render';
+import ContactTemplate from '../../../../emails/templates/ContactTemplate';
 
 const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 	const switchTab = (value: string) => {
@@ -20,13 +22,35 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 
 		const form = e.currentTarget;
 		const formData = new FormData(form);
-		const endpoint = `/api/${type}`;
+		formData.append('type', type);
 
-		const data = Object.fromEntries(formData.entries()) as Record<string, string>;
+		const formObj = Object.fromEntries(formData.entries()) as Record<
+			string,
+			string
+		>;
+
+		const website = formObj.website;
+		const formType = formObj.type;
+		const email = formObj.Email;
+
+		const fields = Object.entries(formObj)
+			.filter(([key]) => key !== 'website' && key !== 'type')
+			.map(([label, info]) => ({ label, info }));
+
+		const html = await pretty(
+			await render(<ContactTemplate fields={fields} />)
+		);
+		const text = await render(<ContactTemplate fields={fields} />, {
+			plainText: true,
+		});
+
+		const subject = formType === 'contact' ? 'Contact Request' : 'Demo Request';
+
+		const data = { subject, email, html, text, website };
 
 		try {
-			await axios.post(endpoint, data);
-			form.reset();
+			await axios.post('/api/contact', data);
+			//form.reset();
 		} catch (error: any) {
 			console.error(error.response?.data || error.message);
 		}
@@ -61,9 +85,13 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 				</p>
 
 				{isRequestDemo ? (
-					<DemoForm handleContactSubmit={(e) => handleContactSubmit(e, 'request-demo')} />
+					<DemoForm
+						handleContactSubmit={(e) => handleContactSubmit(e, 'request-demo')}
+					/>
 				) : (
-					<ContactForm handleContactSubmit={(e) => handleContactSubmit(e, 'contact')} />
+					<ContactForm
+						handleContactSubmit={(e) => handleContactSubmit(e, 'contact')}
+					/>
 				)}
 			</div>
 		</section>
