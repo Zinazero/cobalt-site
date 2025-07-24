@@ -50,7 +50,7 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 
 		try {
 			await axios.post('/api/contact', data);
-			//form.reset();
+			form.reset();
 		} catch (error: any) {
 			console.error(error.response?.data || error.message);
 		}
