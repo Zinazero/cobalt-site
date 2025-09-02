@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 	const [isContactSent, setIsContactSent] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('');
 
 	const switchTab = (value: string) => {
 		setIsRequestDemo(value === 'demo');
@@ -55,9 +56,9 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 
 		try {
 			await axios.post('/api/contact', data);
-			//form.reset();
 			setIsContactSent(true);
 		} catch (error: any) {
+			setErrorMessage(error.message);
 			console.error(error.response?.data || error.message);
 		}
 	};
@@ -132,6 +133,9 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 						</motion.div>
 					)}
 				</AnimatePresence>
+				{errorMessage && (
+					<p className='mt-5 text-[red]'>{errorMessage}</p>
+				)}
 			</div>
 		</section>
 	);
