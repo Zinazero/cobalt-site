@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger } from '../../components/ui/tabs';
 import ContactForm from '../forms/ContactForm';
 import DemoForm from '../forms/DemoForm';
@@ -5,8 +6,12 @@ import type { FormSubmitHandler, RequestDemoProps } from '../../types';
 import axios from 'axios';
 import { render, pretty } from '@react-email/render';
 import ContactTemplate from '../../../../emails/templates/ContactTemplate';
+import { Button } from '../ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
+	const [isContactSent, setIsContactSent] = useState(false);
+
 	const switchTab = (value: string) => {
 		setIsRequestDemo(value === 'demo');
 		setTimeout(() => {
@@ -50,7 +55,8 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 
 		try {
 			await axios.post('/api/contact', data);
-			form.reset();
+			//form.reset();
+			setIsContactSent(true);
 		} catch (error: any) {
 			console.error(error.response?.data || error.message);
 		}
@@ -59,40 +65,73 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 	return (
 		<section id='contact' className='bg-white py-30 px-6'>
 			<div className='max-w-xl mx-auto text-center'>
-				<Tabs
-					value={isRequestDemo ? 'demo' : 'contact'}
-					onValueChange={(value) => switchTab(value)}
-				>
-					<TabsList className='mx-auto my-4 bg-light'>
-						<TabsTrigger
-							value='contact'
-							className='cursor-pointer data-[state=active]:bg-white data-[state=active]:text-cobalt-hover'
+				<AnimatePresence mode='wait'>
+					{isContactSent ? (
+						<motion.div
+							key='contact-sent-div'
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.3 }}
 						>
-							Contact
-						</TabsTrigger>
-						<TabsTrigger
-							value='demo'
-							className='cursor-pointer data-[state=active]:bg-white data-[state=active]:text-cobalt-hover'
+							<p className='text-2xl text-grey mb-6'>
+								Thank you for reaching out. We'll be in touch.
+							</p>
+							<Button
+								type='button'
+								className='w-1/2 active:scale-95 bg-cobalt text-white py-3 px-6 rounded-xl hover:bg-cobalt-hover transition'
+								onClick={() => setIsContactSent(false)}
+							>
+								Return
+							</Button>
+						</motion.div>
+					) : (
+						<motion.div
+							key='contact-form-div'
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.3 }}
 						>
-							Request Demo
-						</TabsTrigger>
-					</TabsList>
-				</Tabs>
+							<Tabs
+								value={isRequestDemo ? 'demo' : 'contact'}
+								onValueChange={(value) => switchTab(value)}
+							>
+								<TabsList className='mx-auto my-4 bg-light'>
+									<TabsTrigger
+										value='contact'
+										className='cursor-pointer data-[state=active]:bg-white data-[state=active]:text-cobalt-hover'
+									>
+										Contact
+									</TabsTrigger>
+									<TabsTrigger
+										value='demo'
+										className='cursor-pointer data-[state=active]:bg-white data-[state=active]:text-cobalt-hover'
+									>
+										Request Demo
+									</TabsTrigger>
+								</TabsList>
+							</Tabs>
 
-				<h2 className='text-3xl font-bold mb-4'>Let’s Talk</h2>
-				<p className='text-grey mb-6'>
-					We’d love to hear about your business and show you what Cobalt can do.
-				</p>
-
-				{isRequestDemo ? (
-					<DemoForm
-						handleContactSubmit={(e) => handleContactSubmit(e, 'request-demo')}
-					/>
-				) : (
-					<ContactForm
-						handleContactSubmit={(e) => handleContactSubmit(e, 'contact')}
-					/>
-				)}
+							<h2 className='text-3xl font-bold mb-4'>Let’s Talk</h2>
+							<p className='text-grey mb-6'>
+								We’d love to hear about your business and show you what Cobalt
+								can do.
+							</p>
+							{isRequestDemo ? (
+								<DemoForm
+									handleContactSubmit={(e) =>
+										handleContactSubmit(e, 'request-demo')
+									}
+								/>
+							) : (
+								<ContactForm
+									handleContactSubmit={(e) => handleContactSubmit(e, 'contact')}
+								/>
+							)}
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</div>
 		</section>
 	);
