@@ -58,8 +58,8 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 			await axios.post('/api/contact', data);
 			setIsContactSent(true);
 		} catch (error: any) {
-			setErrorMessage(error.message);
-			console.error(error.response?.data || error.message);
+			setErrorMessage('Something went wrong. Please try again.');
+			//console.error(error.response?.data || error.message);
 		}
 	};
 
