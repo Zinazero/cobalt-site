@@ -23,7 +23,7 @@ const Header = ({ setIsRequestDemo }: RequestDemoProps) => {
 			<div className='mx-auto px-4 py-4 flex items-center justify-between'>
 				<div className='flex items-center'>
 					<img
-						src='/cobalt-logo.svg'
+						src='/images/cobalt-logo.svg'
 						alt='Logo'
 						className='w-15 h-15 cursor-pointer'
 						onClick={() => onLogoClick()}

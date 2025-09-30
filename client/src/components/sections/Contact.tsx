@@ -4,8 +4,6 @@ import ContactForm from '../forms/ContactForm';
 import DemoForm from '../forms/DemoForm';
 import type { FormSubmitHandler, RequestDemoProps } from '../../types';
 import axios from 'axios';
-import { render, pretty } from '@react-email/render';
-import ContactTemplate from '../../../../emails/templates/ContactTemplate';
 import { Button } from '../ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -43,16 +41,9 @@ const Contact = ({ isRequestDemo, setIsRequestDemo }: RequestDemoProps) => {
 			.filter(([key]) => key !== 'website' && key !== 'type')
 			.map(([label, info]) => ({ label, info }));
 
-		const html = await pretty(
-			await render(<ContactTemplate fields={fields} />)
-		);
-		const text = await render(<ContactTemplate fields={fields} />, {
-			plainText: true,
-		});
-
 		const subject = formType === 'contact' ? 'Contact Request' : 'Demo Request';
 
-		const data = { subject, email, html, text, website };
+		const data = { subject, email, fields, website };
 
 		try {
 			await axios.post('/api/contact', data);

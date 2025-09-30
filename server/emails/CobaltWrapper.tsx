@@ -8,6 +8,7 @@ import {
 	Img,
 } from '@react-email/components';
 import type { ReactNode } from 'react';
+import { getLogoSrc } from './utils/getImageSrc';
 
 const CobaltWrapper = ({ children }: { children: ReactNode }) => (
 	<Tailwind
@@ -30,11 +31,7 @@ const CobaltWrapper = ({ children }: { children: ReactNode }) => (
 			<Head />
 			<Body className='bg-white text-dark font-sans'>
 				<Container className='bg-light text-center rounded-3xl overflow-hidden px-12 py-8 !my-10 mx-auto'>
-					<Img
-						src='www.cobaltsoft.ca/cobalt-logo192.png'
-						alt='Cobalt Logo'
-						className='mx-auto'
-					/>
+					<Img src={getLogoSrc()} alt='Cobalt Logo' className='mx-auto' />
 					{children}
 				</Container>
 			</Body>

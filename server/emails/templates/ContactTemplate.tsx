@@ -1,13 +1,13 @@
 import { Container, Heading, Text, Hr, Section } from '@react-email/components';
 import CobaltWrapper from '../CobaltWrapper';
 
-type EmailField = {
+interface Field {
 	label: string;
 	info: string;
 };
 
-type ContactTemplateProps = {
-	fields: EmailField[];
+interface ContactTemplateProps {
+	fields: Field[];
 };
 
 const ContactTemplate = ({ fields }: ContactTemplateProps) => {

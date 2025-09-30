@@ -19,7 +19,7 @@ const Hero = ({ setIsRequestDemo }: RequestDemoProps) => {
 			{/* Image */}
 			<div className='hidden lg:block absolute right-25 w-3/5 rounded-lg overflow-hidden shadow-sm'>
 				<img
-					src='/cobalt-primary-view.png'
+					src='/images/cobalt-primary-view.png'
 					alt='App preview'
 					className='h-full w-full object-contain opacity-30'
 					draggable={false}

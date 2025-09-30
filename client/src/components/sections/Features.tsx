@@ -9,32 +9,32 @@ const Features = () => {
 		{
 			title: 'Scheduling Tools',
 			desc: 'Manage staff, shifts and budgets with ease. Utilize preset shifts and weeks to save your company time and money.',
-			imgSrc: '/cobalt-presets-view.png',
+			imgSrc: '/images/cobalt-presets-view.png',
 		},
 		{
 			title: 'Analytics Dashboards',
 			desc: 'Real-time insights into your operations and performance.',
-			imgSrc: '/cobalt-data-view.png',
+			imgSrc: '/images/cobalt-data-view.png',
 		},
 		{
 			title: 'Facilties Schedules',
 			desc: 'Live schedules for facilities ranging from pools and studios to gyms and activity spaces.',
-			imgSrc: '/cobalt-facilities-schedule-view.png',
+			imgSrc: '/images/cobalt-facilities-schedule-view.png',
 		},
 		{
 			title: 'Compliance Automation',
 			desc: 'Ensure tasks and safety checks are always completed. Unlock productivity through gamification.',
-			imgSrc: '/cobalt-compliance-view.png',
+			imgSrc: '/images/cobalt-compliance-view.png',
 		},
 		{
 			title: 'Functional Layouts',
 			desc: 'Access all the most important information in one streamlined page, designed for quick insights and efficient decision-making.',
-			imgSrc: '/cobalt-club-info-view.png'
+			imgSrc: '/images/cobalt-club-info-view.png'
 		},
 		{
 			title: 'Tailored Solutions',
 			desc: 'Software should adapt to your business—not the other way around. Get solutions built around your unique workflows, goals and challenges.',
-			imgSrc: '/cobalt-consulting-pic.jpg'
+			imgSrc: '/images/cobalt-consulting-pic.jpg'
 		}
 	];
 
