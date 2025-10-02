@@ -19,7 +19,7 @@ const DemoButton = ({ className, text }: DemoButtonProps) => {
 	return (
 		<Button
 			onClick={handleDemoClick}
-			className={`${className} cursor-pointer`}
+			className={className}
 		>
 			{text ? text : 'Request a Demo'}
 		</Button>

@@ -1,10 +1,11 @@
 import { Input } from '../ui/shadcn/input';
 import { Textarea } from '../ui/shadcn/textarea';
 import { Button } from '../ui/shadcn/button';
+import { FormProps } from './types';
 
-const ContactForm = () => {
+const ContactForm = ({ onSubmit }: FormProps) => {
   return (
-    <form className="space-y-4">
+    <form className="space-y-4" onSubmit={(e) => onSubmit(e, 'contact')}>
       {/* Name */}
       <Input
         type="text"
