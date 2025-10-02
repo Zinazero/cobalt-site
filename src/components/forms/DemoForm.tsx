@@ -46,7 +46,6 @@ const DemoForm = ({ onSubmit, loading }: FormProps) => {
 				tabIndex={-1}
 				style={{ display: 'none' }}
 			/>
-, loading
 			{/* Submit Button */}
 			<Button
 				type='submit'
