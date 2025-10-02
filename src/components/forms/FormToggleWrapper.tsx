@@ -8,10 +8,10 @@ const FormToggleWrapper = () => {
 		<FormToggle
 			render={(isRequestDemo) => (
 				<>
-					<div className={isRequestDemo ? 'hidden' : 'block'}>
+					<div className={isRequestDemo ? 'hidden' : 'block max-w-lg mx-auto'}>
 						<ContactForm />
 					</div>
-					<div className={isRequestDemo ? 'block' : 'hidden'}>
+					<div className={isRequestDemo ? 'block max-w-lg mx-auto' : 'hidden'}>
 						<DemoForm />
 					</div>
 				</>

@@ -3,7 +3,10 @@ import DemoButton from '../ui/DemoButton';
 export default function Header() {
 	return (
 		<header className='sticky top-0 z-50 w-full border-b shadow-sm bg-gradient-to-r from-abyss to-cobalt'>
-			<div id='header-div' className='mx-auto px-4 flex items-center justify-between'>
+			<div
+				id='header-div'
+				className='mx-auto px-4 flex items-center justify-between'
+			>
 				{/* Logo */}
 				<div className='flex items-center'>
 					<a href='#hero'>
@@ -21,8 +24,11 @@ export default function Header() {
 
 				{/* Navigation */}
 				<nav className='hidden md:flex space-x-20 text-2xl font-medium text-white'>
-					<a href='#features' className='hover:text-cobalt-hover transition'>
-						Features
+					<a href='#cobalt-axis' className='hover:text-cobalt-hover transition'>
+						Products
+					</a>
+					<a href='#consulting' className='hover:text-cobalt-hover transition'>
+						Services
 					</a>
 					<a
 						href='#testimonials'
@@ -37,7 +43,7 @@ export default function Header() {
 
 				{/* Interactive part */}
 				<div className='hidden md:block'>
-					<DemoButton className='bg-abyss text-white hover:bg-cobalt-hover' />
+					<DemoButton className='bg-abyss text-white hover:bg-cobalt-hover text-lg' />
 				</div>
 			</div>
 		</header>

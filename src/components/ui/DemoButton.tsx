@@ -4,9 +4,10 @@ import { Button } from './shadcn/button';
 
 interface DemoButtonProps {
     className?: string
+	text?: string
 }
 
-const DemoButton = ({ className }: DemoButtonProps) => {
+const DemoButton = ({ className, text }: DemoButtonProps) => {
 	const handleDemoClick = () => {
 		window.location.hash = 'demo';
 		document.getElementById('contact')?.scrollIntoView({
@@ -20,7 +21,7 @@ const DemoButton = ({ className }: DemoButtonProps) => {
 			onClick={handleDemoClick}
 			className={`${className} cursor-pointer`}
 		>
-			Request a Demo
+			{text ? text : 'Request a Demo'}
 		</Button>
 	);
 };

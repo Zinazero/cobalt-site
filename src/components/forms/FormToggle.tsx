@@ -27,13 +27,8 @@ const FormToggle = ({ render }: FormToggleProps) => {
 	};
 
 	useEffect(() => {
-		// Initial check
 		checkHash();
-
-		// Listen for hash changes
 		window.addEventListener('hashchange', checkHash);
-
-		// Cleanup
 		return () => {
 			window.removeEventListener('hashchange', checkHash);
 		};
@@ -45,7 +40,7 @@ const FormToggle = ({ render }: FormToggleProps) => {
 				value={isRequestDemo ? 'demo' : 'contact'}
 				onValueChange={switchTab}
 			>
-				<TabsList className='mx-auto my-4 bg-light'>
+				<TabsList className='mx-auto my-4 bg-gray-100'>
 					<TabsTrigger
 						value='contact'
 						className='cursor-pointer data-[state=active]:bg-white data-[state=active]:text-cobalt-hover'

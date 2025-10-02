@@ -1,4 +1,4 @@
-const Testimonials = () => {
+export const Testimonials = () => {
 	type Testimonial = {
 		quote: string;
 		name: string;
@@ -40,7 +40,7 @@ const Testimonials = () => {
 	return (
 		<section
 			id='testimonials'
-			className='min-h-screen flex flex-col items-center justify-center bg-light px-6'
+			className='flex flex-col items-center py-30 bg-white px-6'
 		>
 			<div className='text-center mb-12'>
 				<h2 className='text-4xl text-cobalt font-bold'>
@@ -54,16 +54,16 @@ const Testimonials = () => {
 					return (
 						<div
 							key={name}
-							className={`bg-white p-6 rounded-2xl shadow-sm flex flex-col justify-between max-w-xl ${
+							className={`bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between max-w-xl ${
 								isLastOdd
 									? 'col-span-2 justify-self-center mx-auto'
 									: ''
 							}`}
 						>
-							<p className='italic text-grey-dark mb-4'>{quote}</p>
+							<p className='italic !text-grey-dark mb-4'>{quote}</p>
 							<div>
-								<p className='font-semibold text-dark'>{name}</p>
-								<p className='text-sm text-muted-foreground'>
+								<p className='font-semibold !text-dark'>{name}</p>
+								<p className='text-sm'>
 									{title}
 									{location ? `, ${location}` : ''}
 								</p>
@@ -75,5 +75,3 @@ const Testimonials = () => {
 		</section>
 	);
 };
-
-export default Testimonials;

@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
-import Head from 'next/head';
 import { SeoHead } from '@/components/seo/SeoHead';
 
 export const metadata: Metadata = {

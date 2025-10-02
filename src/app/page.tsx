@@ -1,13 +1,15 @@
-import Hero from '@/sections/Hero';
-import Features from '@/sections/Features';
-import Testimonials from '@/sections/Testimonials';
-import Contact from '@/sections/Contact';
+import { Hero } from '@/sections/Hero';
+import { CobaltAxis } from '@/sections/CobaltAxis';
+import { Testimonials } from '@/sections/Testimonials';
+import { Contact } from '@/sections/Contact';
+import { Consulting } from '@/sections/Consulting';
 
 export default function HomePage() {
 	return (
-		<main>
+		<main className='min-h-screen bg-light'>
 			<Hero />
-			<Features />
+			<CobaltAxis />
+			<Consulting />
 			<Testimonials />
 			<Contact />
 		</main>
