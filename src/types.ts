@@ -6,4 +6,4 @@ export interface Field {
 export type FormSubmitHandler = (
 	e: React.FormEvent<HTMLFormElement>,
 	type: 'contact' | 'demo'
-) => Promise<void>;
+) => Promise<void | boolean>;

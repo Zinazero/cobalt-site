@@ -2,8 +2,10 @@ import { Input } from '../ui/shadcn/input';
 import { Textarea } from '../ui/shadcn/textarea';
 import { Button } from '../ui/shadcn/button';
 import { FormProps } from './types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-const DemoForm = ({ onSubmit }: FormProps) => {
+const DemoForm = ({ onSubmit, loading }: FormProps) => {
 	return (
 		<form className='space-y-4' onSubmit={(e) => onSubmit(e, 'demo')}>
 			{/* First Name */}
@@ -44,13 +46,18 @@ const DemoForm = ({ onSubmit }: FormProps) => {
 				tabIndex={-1}
 				style={{ display: 'none' }}
 			/>
-
+, loading
 			{/* Submit Button */}
 			<Button
 				type='submit'
 				className='w-full active:scale-95 bg-cobalt text-white py-3 px-6 rounded-xl hover:bg-cobalt-hover transition'
+				disabled={loading}
 			>
-				Send Message
+				{loading ? (
+					<FontAwesomeIcon icon={faSpinner} spin size='2x' />
+				) : (
+					'Send Message'
+				)}
 			</Button>
 		</form>
 	);

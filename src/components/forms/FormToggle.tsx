@@ -12,6 +12,7 @@ const FormToggle = ({ render }: FormToggleProps) => {
 
 	const switchTab = (value: string) => {
 		setIsRequestDemo(value === 'demo');
+		window.location.hash = '#contact';
 	};
 
 	const scrollDown = () => {
