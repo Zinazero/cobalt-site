@@ -1,4 +1,5 @@
 import DemoButton from '@/components/ui/DemoButton';
+import Image from 'next/image';
 
 export const Consulting = () => {
 	return (
@@ -20,7 +21,7 @@ export const Consulting = () => {
 					{/* Text */}
 					<div className='w-1/2 flex flex-col space-y-4'>
 						<h4 className='text-2xl text-cobalt font-semibold'>
-							Not seeing what you're looking for? <br /> Let us help you find
+							Not seeing what you’re looking for? <br /> Let us help you find
 							it.
 						</h4>
 
@@ -46,7 +47,7 @@ export const Consulting = () => {
 					{/* Image */}
 					<div className='w-1/2 relative'>
 						<div className='absolute w-1/4 h-full bg-gradient-to-r from-white to-white/0'></div>
-						<img
+						<Image
 							src='/images/cobalt-consulting-pic.jpg'
 							alt='App preview'
 							draggable={false}

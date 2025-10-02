@@ -1,12 +1,13 @@
 import DemoButton from '@/components/ui/DemoButton';
 import { Button } from '../components/ui/shadcn/button';
+import Image from 'next/image';
 
 export const Hero = () => {
 	return (
 		<section id='hero' className='relative min-h-screen flex items-center overflow-hidden'>
 			{/* Image */}
 			<div className='hidden lg:block absolute right-25 w-3/5 rounded-lg overflow-hidden shadow-sm'>
-				<img
+				<Image
 					src='/images/cobalt-primary-view.png'
 					alt='App preview'
 					className='h-full w-full object-contain opacity-30'

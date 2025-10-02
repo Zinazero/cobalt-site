@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const CobaltAxis = () => {
 	interface Image {
 		src: string;
@@ -16,7 +18,7 @@ export const CobaltAxis = () => {
 			desc: 'Manage staff, shifts and budgets with ease. Utilize preset shifts and weeks to save your company time and money.',
 			img: {
 				src: '/images/cobalt-presets-view.png',
-				alt: `Screenshot of Cobalt Axis' Preset Shifts Menu`,
+				alt: `Screenshot of Cobalt Axis’ Preset Shifts Menu`,
 			},
 		},
 		{
@@ -24,7 +26,7 @@ export const CobaltAxis = () => {
 			desc: 'Real-time insights into your operations and performance.',
 			img: {
 				src: '/images/cobalt-data-view.png',
-				alt: `Screenshot of Cobalt Axis' Data Center with a bar graph showing total employee hours`,
+				alt: `Screenshot of Cobalt Axis’ Data Center with a bar graph showing total employee hours`,
 			},
 		},
 		{
@@ -32,7 +34,7 @@ export const CobaltAxis = () => {
 			desc: 'Live schedules for facilities ranging from pools and studios to gyms and activity spaces.',
 			img: {
 				src: '/images/cobalt-facilities-schedule-view.png',
-				alt: `Screenshot of Cobalt Axis' Facility Schedule module, showing a Pool Schedule with classes`,
+				alt: `Screenshot of Cobalt Axis’ Facility Schedule module, showing a Pool Schedule with classes`,
 			},
 		},
 		{
@@ -40,7 +42,7 @@ export const CobaltAxis = () => {
 			desc: 'Ensure tasks and safety checks are always completed. Unlock productivity through gamification.',
 			img: {
 				src: '/images/cobalt-compliance-view.png',
-				alt: `Screenshot of Cobalt Axis' Snapshot module complete with Employee Zoning and Compliance Tracking/Gamification`,
+				alt: `Screenshot of Cobalt Axis’ Snapshot module complete with Employee Zoning and Compliance Tracking/Gamification`,
 			},
 		},
 		{
@@ -48,7 +50,7 @@ export const CobaltAxis = () => {
 			desc: 'Access all the most important information in one streamlined page, designed for quick insights and efficient decision-making.',
 			img: {
 				src: '/images/cobalt-club-info-view.png',
-				alt: `Screenshot of Cobalt Axis' Club Info module, showing Memos, Compliance Charts and daily Facility Schedules`,
+				alt: `Screenshot of Cobalt Axis’ Club Info module, showing Memos, Compliance Charts and daily Facility Schedules`,
 			},
 		},
 		{
@@ -56,7 +58,7 @@ export const CobaltAxis = () => {
 			desc: 'Seamlessly manage your business on the go with layouts optimized for mobile devices. Our mobile experience ensures staff and managers stay connected anytime, anywhere.',
 			img: {
 				src: '/images/cobalt-mobile-layouts.png',
-				alt: `Screenshot of Cobalt Axis' mobile layout, showing the Schedule page and tabs along the bottom`,
+				alt: `Screenshot of Cobalt Axis’ mobile layout, showing the Schedule page and tabs along the bottom`,
 			},
 		},
 	];
@@ -83,7 +85,7 @@ export const CobaltAxis = () => {
 						{img && (
 							<div className='flex items-center justify-center flex-1'>
 								<figure className='rounded-lg overflow-hidden shadow-sm'>
-									<img
+									<Image
 										src={img.src}
 										alt={img.alt}
 										draggable={false}

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import {
-	WithContext,
 	Organization,
 	Person,
 	SoftwareApplication,
