@@ -26,7 +26,6 @@ export const handleContactSubmit: FormSubmitHandler = async (e, type) => {
 	const subject = formType === 'contact' ? 'Contact Request' : 'Demo Request';
 
 	try {
-		console.log('sending email!')
 		await axios.post('/api/contact', {
 			subject,
 			email,

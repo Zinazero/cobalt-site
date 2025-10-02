@@ -9,15 +9,10 @@ const resend = new Resend(env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
-    console.log('receiving request');
-    console.log({ EMAIL_SENDER: env.EMAIL_SENDER, EMAIL_RECEIVER: env.EMAIL_RECEIVER });
-
-
     const { subject, email, fields, website }: { subject: string; email: string; fields: Field[]; website?: string } = await req.json();
 
     // Honeypot check
     if (website) {
-      console.log('Honeypot triggered');
       return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 });
     }
 
