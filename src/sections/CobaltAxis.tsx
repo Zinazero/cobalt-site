@@ -79,7 +79,7 @@ export const CobaltAxis = () => {
 						A modular platform tailored to <b>your</b> business.
 					</p>
 				</div>
-				<div className='grid lg:grid-cols-3 gap-10 mx-auto'>
+				<div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-10 mx-auto'>
 					{featureArray.map(({ title, desc, img }) => (
 						<article
 							key={title}
@@ -91,13 +91,14 @@ export const CobaltAxis = () => {
 							</div>
 
 							{img && (
-								<figure className='w-full h-140 lg:h-80 rounded-lg overflow-hidden shadow-sm relative'>
+								<figure className='w-full h-150 lg:h-80 rounded-lg overflow-hidden shadow-sm relative'>
 									<Image
 										src={img.src}
 										alt={img.alt}
 										draggable={false}
 										fill
 										className={`object-cover ${img.position}`}
+										sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
 									/>
 								</figure>
 							)}
