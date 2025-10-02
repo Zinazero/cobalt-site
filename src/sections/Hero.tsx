@@ -8,6 +8,7 @@ export const Hero = () => {
 			<div className='lg:hidden flex items-center h-40'>
 				<img 
 					src='/images/cobalt-text-logo.svg'
+					alt='Cobalt Software Solutions Logo'
 					className='h-full'
 				/>
 			</div>
