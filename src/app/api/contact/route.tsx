@@ -8,28 +8,42 @@ import type { Field } from '@/types';
 const resend = new Resend(env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
-  try {
-    const { subject, email, fields }: { subject: string; email: string; fields: Field[] } = await req.json();
+	try {
+    console.log('receiving!')
 
-    if (!env.EMAIL_SENDER || !env.EMAIL_RECEIVER) {
-      return NextResponse.json({ error: 'Missing EMAIL_SENDER or EMAIL_RECEIVER' }, { status: 500 });
-    }
+		const {
+			subject,
+			email,
+			fields,
+		}: { subject: string; email: string; fields: Field[] } = await req.json();
 
-    const html = await pretty(await render(<ContactTemplate fields={fields} />));
-    const text = toPlainText(html);
+		if (!env.EMAIL_SENDER || !env.EMAIL_RECEIVER) {
+			return NextResponse.json(
+				{ error: 'Missing EMAIL_SENDER or EMAIL_RECEIVER' },
+				{ status: 500 }
+			);
+		}
 
-    await resend.emails.send({
-      from: `Cobalt Contact <${env.EMAIL_SENDER}>`,
-      to: env.EMAIL_RECEIVER,
-      subject,
-      html,
-      text,
-      replyTo: email,
-    });
+		const html = await pretty(
+			await render(<ContactTemplate fields={fields} />)
+		);
+		const text = toPlainText(html);
 
-    return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
-  }
+		await resend.emails.send({
+			from: `Cobalt Contact <${env.EMAIL_SENDER}>`,
+			to: env.EMAIL_RECEIVER,
+			subject,
+			html,
+			text,
+			replyTo: email,
+		});
+
+		return NextResponse.json({ success: true });
+	} catch (err) {
+		console.error(err);
+		return NextResponse.json(
+			{ error: 'Failed to send email' },
+			{ status: 500 }
+		);
+	}
 }

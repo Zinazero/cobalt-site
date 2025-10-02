@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import DemoButton from '../ui/DemoButton';
 
 export default function Header() {
@@ -11,7 +10,7 @@ export default function Header() {
 				{/* Logo */}
 				<div className='flex items-center'>
 					<a href='#hero'>
-						<Image
+						<img
 							src='/images/cobalt-logo.svg'
 							alt='Logo'
 							className='w-15 h-15 cursor-pointer'

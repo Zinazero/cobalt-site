@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const CobaltAxis = () => {
 	interface Image {
 		src: string;
@@ -85,7 +83,7 @@ export const CobaltAxis = () => {
 						{img && (
 							<div className='flex items-center justify-center flex-1'>
 								<figure className='rounded-lg overflow-hidden shadow-sm'>
-									<Image
+									<img
 										src={img.src}
 										alt={img.alt}
 										draggable={false}

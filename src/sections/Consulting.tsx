@@ -1,5 +1,4 @@
 import DemoButton from '@/components/ui/DemoButton';
-import Image from 'next/image';
 
 export const Consulting = () => {
 	return (
@@ -47,7 +46,7 @@ export const Consulting = () => {
 					{/* Image */}
 					<div className='w-1/2 relative'>
 						<div className='absolute w-1/4 h-full bg-gradient-to-r from-white to-white/0'></div>
-						<Image
+						<img
 							src='/images/cobalt-consulting-pic.jpg'
 							alt='App preview'
 							draggable={false}
