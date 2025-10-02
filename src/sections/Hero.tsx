@@ -3,8 +3,16 @@ import { Button } from '../components/ui/shadcn/button';
 
 export const Hero = () => {
 	return (
-		<section id='hero' className='relative min-h-screen flex items-center overflow-hidden'>
-			{/* Image */}
+		<section id='hero' className='relative min-h-screen flex flex-col lg:flex-row items-center space-y-10 py-10 overflow-hidden'>
+			{/* Logo Image */}
+			<div className='lg:hidden flex items-center h-40'>
+				<img 
+					src='/images/cobalt-text-logo.svg'
+					className='h-full'
+				/>
+			</div>
+
+			{/* Ghost Image */}
 			<div className='hidden lg:block absolute right-25 w-3/5 rounded-lg overflow-hidden shadow-sm'>
 				<img
 					src='/images/cobalt-primary-view.png'
