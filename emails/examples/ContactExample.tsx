@@ -5,7 +5,7 @@ const ContactExample = () => {
 		{ label: 'First Name', info: 'John' },
 		{ label: 'Last Name', info: 'Doe' },
 		{ label: 'Email', info: 'johndoe@gmail.com' },
-		{ label: 'Phone', info: '5198654160' },
+		{ label: 'Phone', info: '1234567890' },
 		{ label: 'Company Name', info: 'John Doe Inc.' },
 		{ label: 'Industry', info: 'Hospitality Services' },
 	];
