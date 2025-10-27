@@ -54,9 +54,9 @@ export const Testimonials = () => {
                 isLastOdd ? 'col-span-2 justify-self-center mx-auto' : ''
               }`}
             >
-              <p className="italic !text-grey-dark mb-4">{quote}</p>
+              <p className="italic text-grey-dark! mb-4">{quote}</p>
               <div>
-                <p className="font-semibold !text-dark">{name}</p>
+                <p className="font-bold text-dark!">{name}</p>
                 <p className="text-sm">
                   {title}
                   {location ? `, ${location}` : ''}

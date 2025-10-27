@@ -1,45 +1,43 @@
 import Script from 'next/script';
-import { AboutPage, Graph, Organization, Person, Service, SoftwareApplication, WebPage } from 'schema-dts';
+import { Graph, Organization, Person, Service, SoftwareApplication, WebPage } from 'schema-dts';
 
 export const JsonLd = () => {
   const organization: Organization = {
     '@type': 'Organization',
-    '@id': 'https://cobaltsoft.ca/#cobalt-software-solutions',
+    '@id': 'https://www.cobaltsoft.ca/#cobalt-software-solutions',
     name: 'Cobalt Software Solutions',
-    url: 'https://cobaltsoft.ca',
+    url: 'https://www.cobaltsoft.ca',
     logo: [
-      'https://cobaltsoft.ca/images/cobalt-text-logo512.png',
-      'https://cobaltsoft.ca/images/cobalt-text-logo192.png',
-      'https://cobaltsoft.ca/images/cobalt-logo512.png',
-      'https://cobaltsoft.ca/images/cobalt-logo192.png',
+      'https://www.cobaltsoft.ca/images/cobalt-text-logo512.png',
+      'https://www.cobaltsoft.ca/images/cobalt-text-logo192.png',
     ],
     sameAs: ['https://www.linkedin.com/company/cobalt-software-solutions/'],
   };
 
   const person: Person = {
     '@type': 'Person',
-    '@id': 'https://cobaltsoft.ca/about/#jacob-hexamer',
+    '@id': 'https://www.cobaltsoft.ca/#jacob-hexamer',
     name: 'Jacob Hexamer',
-    mainEntityOfPage: { '@id': 'https://cobaltsoft.ca/about/#page' },
     sameAs: ['https://www.linkedin.com/in/jhexamer/'],
-    affiliation: { '@id': 'https://cobaltsoft.ca/#cobalt-software-solutions' },
+    affiliation: { '@id': 'https://www.cobaltsoft.ca/#cobalt-software-solutions' },
   };
 
   const software: SoftwareApplication = {
     '@type': 'SoftwareApplication',
-    '@id': 'https://cobaltsoft.ca/#cobalt-axis',
+    '@id': 'https://www.cobaltsoft.ca/#cobalt-axis',
     name: 'Cobalt Axis',
     description: 'A fully modular scheduling and compliance platform, tailored to your business.',
-    provider: { '@id': 'https://cobaltsoft.ca/#cobalt-software-solutions' },
+    provider: { '@id': 'https://www.cobaltsoft.ca/#cobalt-software-solutions' },
+    mainEntityOfPage: { '@id': 'https://www.cobaltsoft.ca/#page' },
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'All',
   };
 
   const service: Service = {
     '@type': 'Service',
-    '@id': 'https://cobaltsoft.ca/#consulting-service',
+    '@id': 'https://www.cobaltsoft.ca/#consulting-service',
     name: 'Software Consultation and Design',
-    provider: { '@id': 'https://cobaltsoft.ca/#cobalt-software-solutions' },
+    provider: { '@id': 'https://www.cobaltsoft.ca/#cobalt-software-solutions' },
     serviceType: 'Software Consultation and Design',
     description:
       'Custom software consultation and design services for businesses looking to improve productivity and workflows.',
@@ -47,26 +45,17 @@ export const JsonLd = () => {
 
   const webPage: WebPage = {
     '@type': 'WebPage',
-    '@id': 'https://cobaltsoft.ca/#page',
-    url: 'https://cobaltsoft.ca',
+    '@id': 'https://www.cobaltsoft.ca/#page',
+    url: 'https://www.cobaltsoft.ca',
     name: 'Cobalt Software Solutions',
     description: 'Home page for Cobalt Software Solutions, showcasing offerings and contact form.',
     inLanguage: 'en-CA',
-    mainEntity: { '@id': 'https://cobaltsoft.ca/#cobalt-axis' },
-    about: { '@id': 'https://cobaltsoft.ca/about/#jacob-hexamer' },
-  };
-
-  const aboutPage: AboutPage = {
-    '@type': 'AboutPage',
-    '@id': 'https://cobaltsoft.ca/about/#page',
-    url: 'https://cobaltsoft.ca/about',
-    name: 'About Jacob Hexamer, Founder and President of Cobalt Software Solutions',
-    mainEntity: { '@id': 'https://cobaltsoft.ca/about/#jacob-hexamer' },
+    mainEntity: { '@id': 'https://www.cobaltsoft.ca/#cobalt-axis' },
   };
 
   const jsonLd: Graph = {
     '@context': 'https://schema.org',
-    '@graph': [organization, person, software, service, webPage, aboutPage],
+    '@graph': [organization, person, software, service, webPage],
   };
 
   return (

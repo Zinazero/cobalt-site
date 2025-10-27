@@ -10,7 +10,7 @@ export const Consulting = () => {
           <h2 className="text-4xl text-cobalt font-bold">
             Software should adapt to your business — not the other way around.
           </h2>
-          <h3 className="text-2xl font-source text-grey">
+          <h3 className="text-2xl font-source! text-grey">
             Get solutions built around your unique workflows, goals and challenges.
           </h3>
         </div>
@@ -31,7 +31,7 @@ export const Consulting = () => {
 
           {/* Text */}
           <div className="2xl:w-1/2 flex flex-col space-y-4 p-2 2xl:p-10">
-            <h4 className="lg:text-2xl text-cobalt font-semibold text-center 2xl:text-left">
+            <h4 className="lg:text-2xl text-cobalt font-bold text-center 2xl:text-left">
               Not seeing what you’re looking for? <br /> Let us help you find it.
             </h4>
 

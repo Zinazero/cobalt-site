@@ -20,7 +20,7 @@ export default function Header() {
               draggable={false}
             />
           </figure>
-          <span className="text-light font-extrabold hidden lg:block">Cobalt Software Solutions</span>
+          <span className="text-light font-bold hidden lg:block">Cobalt Software Solutions</span>
         </a>
 
         {/* Navigation */}

@@ -42,9 +42,7 @@ const FormToggleWrapper = () => {
           transition={{ duration: 0.3 }}
         >
           <h2 className="text-3xl text-cobalt font-bold mb-4">Let’s Talk</h2>
-          <p className="text-grey mb-6">
-            We’d love to hear about your business and show you what Cobalt can do.
-          </p>
+          <p className="mb-6">We’d love to hear about your business and show you what Cobalt can do.</p>
           <FormToggle
             render={(isRequestDemo) => (
               <>

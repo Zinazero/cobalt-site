@@ -86,7 +86,7 @@ export const CobaltAxis = () => {
               className="flex flex-col justify-between bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition min-h-130"
             >
               <div className="mb-10">
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <h3 className="text-xl font-bold mb-2">{title}</h3>
                 <p className="text-grey">{desc}</p>
               </div>
 

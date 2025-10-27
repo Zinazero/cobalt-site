@@ -10,7 +10,13 @@ export const Hero = () => {
     >
       {/* Logo Image */}
       <div className="lg:hidden flex items-center h-40">
-        <Image src="/images/cobalt-text-logo.svg" alt="Cobalt Software Solutions Logo" className="h-full" />
+        <Image
+          src="/images/cobalt-text-logo.svg"
+          alt="Cobalt Software Solutions Logo"
+          className="h-full"
+          width={0}
+          height={0}
+        />
       </div>
 
       {/* Ghost Image */}
@@ -19,6 +25,9 @@ export const Hero = () => {
           src="/images/cobalt-primary-view.png"
           alt="App preview"
           className="h-full w-full object-contain opacity-30"
+          width={2559}
+          height={1286}
+          priority
           draggable={false}
         />
       </div>
@@ -26,7 +35,7 @@ export const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 lg:px-20 text-center lg:text-left relative z-10">
         <div className="max-w-2xl mx-auto lg:mx-0 bg-white rounded-lg overflow-hidden shadow-lg p-4">
-          <h1 className="text-4xl font-extrabold text-dark mb-6">
+          <h1 className="text-4xl font-bold text-dark mb-6">
             Empowering Ontario Businesses with <span className="text-cobalt">Tailored Software</span>
           </h1>
           <p className="text-grey mb-8">

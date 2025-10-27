@@ -7,7 +7,7 @@ interface ThanksProps {
 
 export const Thanks = ({ onClick }: ThanksProps) => (
   <>
-    <h4 className="text-4xl font-semibold text-cobalt mb-2">Thanks for reaching out!</h4>
+    <h4 className="text-4xl font-bold text-cobalt mb-2">Thanks for reaching out!</h4>
     <p className="!text-xl">We’ll be in touch shortly.</p>
     <Button
       onClick={onClick}
