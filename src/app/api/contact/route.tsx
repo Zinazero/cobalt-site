@@ -1,15 +1,20 @@
+import { pretty, render, toPlainText } from '@react-email/render';
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import env from '@/config/env';
-import { render, pretty, toPlainText } from '@react-email/render';
-import ContactTemplate from '../../../emails/templates/ContactTemplate';
 import type { Field } from '@/types';
+import ContactTemplate from '../../../emails/templates/ContactTemplate';
 
 const resend = new Resend(env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
-    const { subject, email, fields, website }: { subject: string; email: string; fields: Field[]; website?: string } = await req.json();
+    const {
+      subject,
+      email,
+      fields,
+      website,
+    }: { subject: string; email: string; fields: Field[]; website?: string } = await req.json();
 
     // Honeypot check
     if (website) {
@@ -17,10 +22,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (!env.EMAIL_SENDER || !env.EMAIL_RECEIVER) {
-      return NextResponse.json(
-        { error: 'Missing EMAIL_SENDER or EMAIL_RECEIVER' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Missing EMAIL_SENDER or EMAIL_RECEIVER' }, { status: 500 });
     }
 
     // Render email HTML and text

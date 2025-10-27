@@ -1,9 +1,9 @@
 export interface Field {
-	label: string;
-	info: string;
+  label: string;
+  info: string;
 }
 
 export type FormSubmitHandler = (
-	e: React.FormEvent<HTMLFormElement>,
-	type: 'contact' | 'demo'
-) => Promise<void | boolean>;
+  e: React.FormEvent<HTMLFormElement>,
+  type: 'contact' | 'demo',
+) => Promise<boolean>;

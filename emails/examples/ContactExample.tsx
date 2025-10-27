@@ -1,16 +1,16 @@
 import ContactTemplate from '../../src/emails/templates/ContactTemplate';
 
 const ContactExample = () => {
-	const fields = [
-		{ label: 'First Name', info: 'John' },
-		{ label: 'Last Name', info: 'Doe' },
-		{ label: 'Email', info: 'johndoe@gmail.com' },
-		{ label: 'Phone', info: '1234567890' },
-		{ label: 'Company Name', info: 'John Doe Inc.' },
-		{ label: 'Industry', info: 'Hospitality Services' },
-	];
+  const fields = [
+    { label: 'First Name', info: 'John' },
+    { label: 'Last Name', info: 'Doe' },
+    { label: 'Email', info: 'johndoe@gmail.com' },
+    { label: 'Phone', info: '1234567890' },
+    { label: 'Company Name', info: 'John Doe Inc.' },
+    { label: 'Industry', info: 'Hospitality Services' },
+  ];
 
-	return <ContactTemplate fields={fields} />;
+  return <ContactTemplate fields={fields} />;
 };
 
 export default ContactExample;
