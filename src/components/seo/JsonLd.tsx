@@ -1,7 +1,16 @@
 import Script from 'next/script';
-import { Graph, Organization, Person, Service, SoftwareApplication, WebPage } from 'schema-dts';
+import { Graph, Organization, Person, Service, SoftwareApplication, WebPage, WebSite } from 'schema-dts';
 
 export const JsonLd = () => {
+  const website: WebSite = {
+    '@type': 'WebSite',
+    '@id': 'https://www.cobaltsoft.ca/#website',
+    url: 'https://www.cobaltsoft.ca',
+    name: 'Cobalt Software Solutions',
+    publisher: { '@id': 'https://www.cobaltsoft.ca/#cobalt-software-solutions' },
+    inLanguage: 'en-CA',
+  };
+
   const organization: Organization = {
     '@type': 'Organization',
     '@id': 'https://www.cobaltsoft.ca/#cobalt-software-solutions',
@@ -51,11 +60,12 @@ export const JsonLd = () => {
     description: 'Home page for Cobalt Software Solutions, showcasing offerings and contact form.',
     inLanguage: 'en-CA',
     mainEntity: { '@id': 'https://www.cobaltsoft.ca/#cobalt-axis' },
+    isPartOf: { '@id': 'https://www.cobaltsoft.ca/#website' },
   };
 
   const jsonLd: Graph = {
     '@context': 'https://schema.org',
-    '@graph': [organization, person, software, service, webPage],
+    '@graph': [website, organization, person, software, service, webPage],
   };
 
   return (
