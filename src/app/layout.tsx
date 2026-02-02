@@ -48,11 +48,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/cobalt-logo32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/cobalt-logo192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/cobalt-logo512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/images/cobalt-logo32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/cobalt-logo192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/images/cobalt-logo512.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: '/cobalt-logo180.png',
+    apple: '/images/cobalt-logo180.png',
   },
   robots: {
     index: true,
