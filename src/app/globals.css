@@ -4,29 +4,29 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-	--color-blue: #1485ff;
-	--color-blue-light: #8eb8e6;
-	--color-purple: #b65bf3;
-	--color-pink: #e83e8c;
-	--color-red: #d41629;
-	--color-orange: #fd7d15;
-	--color-yellow: #eec44f;
+	--color-blue: #1a6bff;
+	--color-blue-light: #7daee6;
+	--color-purple: #9b5de5;
+	--color-pink: #ff5e9f;
+	--color-red: #e63946;
+	--color-orange: #ff8552;
+	--color-yellow: #f4d03f;
 	--color-yellow-light: #f3e246;
-	--color-green: #28a745;
-	--color-green-light: #66e686;
-	--color-green-dark: #0f8b2c;
-	--color-teal: #20c997;
-	--color-cyan: #3ec2eb;
+	--color-green: #26a17b;
+	--color-green-light: #5cb890;
+	--color-green-dark: #1e7e54;
+	--color-teal: #1595a8;
+	--color-cyan: #4db6ac;
 	--color-white: #fff;
-	--color-transparent-grey: rgba(184, 184, 184, 0.5);
-	--color-grey: #6c757d;
-	--color-grey-dark: #343a40;
-	--color-cobalt-hover: #1274ff;
+	--color-transparent-grey: rgba(200, 200, 200, 0.5);
+	--color-grey: #5a6268;
+	--color-grey-dark: #2c3338;
+	--color-cobalt-hover: #0d59c7;
 	--color-cobalt: #0047ab;
-	--color-light: #f8f9fa;
-	--color-dark: #282c31;
+	--color-light: #f0f3f6;
+	--color-dark: #21252b;
 	--color-abyss: #000712;
-	--color-cobalt-light: #4592ff;
+	--color-cobalt-light: #3376cc;
 	--color-pastel-green: rgb(104, 240, 133);
 	--color-pastel-yellow: rgb(253, 251, 147);
 	--color-pastel-red: rgb(247, 119, 119);
@@ -53,3 +53,4 @@ p {
 	font-family: 'Source Serif 4', serif;
 	@apply text-lg text-grey;
 }
+
