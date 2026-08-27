@@ -38,6 +38,8 @@ export const Testimonials = () => {
   ];
 
   return (
+    <>
+    <div className="h-14 bg-linear-to-b from-light to-white" />
     <section id="testimonials" className="flex flex-col items-center py-30 bg-white px-6">
       <div className="text-center mb-12">
         <h2 className="text-4xl text-cobalt font-bold">
@@ -67,5 +69,7 @@ export const Testimonials = () => {
         })}
       </div>
     </section>
+    <div className="h-14 bg-linear-to-t from-light to-white" />
+    </>
   );
 };

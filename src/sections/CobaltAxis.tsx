@@ -71,41 +71,45 @@ export const CobaltAxis = () => {
   ];
 
   return (
-    <section id="cobalt-axis" className="min-h-screen bg-white py-10 px-6">
-      <div className="max-w-450 mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl text-cobalt font-bold">Cobalt Axis</h2>
-          <p className="text-grey mt-2">
-            A modular platform tailored to <b>your</b> business.
-          </p>
-        </div>
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10 mx-auto">
-          {featureArray.map(({ title, desc, img }) => (
-            <article
-              key={title}
-              className="flex flex-col justify-between bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition min-h-130"
-            >
-              <div className="mb-10">
-                <h3 className="text-xl font-bold mb-2">{title}</h3>
-                <p className="text-grey">{desc}</p>
-              </div>
+    <>
+      <div className="h-14 bg-linear-to-b from-light to-white" />
+      <section id="cobalt-axis" className="min-h-screen bg-white py-10 px-6">
+        <div className="max-w-450 mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl text-cobalt font-bold">Cobalt Axis</h2>
+            <p className="text-grey mt-2">
+              A modular platform tailored to <b>your</b> business.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-10 mx-auto">
+            {featureArray.map(({ title, desc, img }) => (
+              <article
+                key={title}
+                className="flex flex-col justify-between bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition min-h-130"
+              >
+                <div className="mb-10">
+                  <h3 className="text-xl font-bold mb-2">{title}</h3>
+                  <p className="text-grey">{desc}</p>
+                </div>
 
-              {img && (
-                <figure className="w-full h-150 lg:h-80 rounded-lg overflow-hidden shadow-sm relative">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    draggable={false}
-                    fill
-                    className={`object-cover ${img.position}`}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </figure>
-              )}
-            </article>
-          ))}
+                {img && (
+                  <figure className="w-full h-150 lg:h-80 rounded-lg overflow-hidden shadow-sm relative">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      draggable={false}
+                      fill
+                      className={`object-cover ${img.position}`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </figure>
+                )}
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <div className="h-14 bg-linear-to-t from-light to-white" />
+    </>
   );
 };

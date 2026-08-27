@@ -36,11 +36,10 @@ export const Hero = () => {
       <div className="container mx-auto px-6 lg:px-20 text-center lg:text-left relative z-10">
         <div className="max-w-2xl mx-auto lg:mx-0 bg-white rounded-lg overflow-hidden shadow-lg p-4">
           <h1 className="text-4xl font-bold text-dark mb-6">
-            Empowering Ontario Businesses with <span className="text-cobalt">Tailored Software</span>
+            Equipping Ontario Businesses with <span className="text-cobalt">Purpose-Built Software</span>
           </h1>
           <p className="text-grey mb-8">
-            Custom productivity and data insights platforms designed to streamline your operations and unlock
-            growth.
+            Custom software, productivity tools and data platforms that don't force your business into someone else’s system.
           </p>
           <div className="flex justify-center lg:justify-start gap-4">
             <DemoButton className="bg-cobalt hover:bg-cobalt-hover px-6 " />
@@ -49,7 +48,7 @@ export const Hero = () => {
                 href="#consulting"
                 className={` !bg-white !text-cobalt border !border-cobalt px-6 py-3 rounded-md hover:!bg-cobalt-hover hover:!border-cobalt-hover hover:!text-white transition`}
               >
-                Learn More
+                See How It Works
               </a>
             </Button>
           </div>
