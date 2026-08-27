@@ -39,7 +39,8 @@ export const Hero = () => {
             Equipping Ontario Businesses with <span className="text-cobalt">Purpose-Built Software</span>
           </h1>
           <p className="text-grey mb-8">
-            Custom software, productivity tools and data platforms that don't force your business into someone else’s system.
+            Custom software, productivity tools and data platforms that don't force your business into someone
+            else’s system.
           </p>
           <div className="flex justify-center lg:justify-start gap-4">
             <DemoButton className="bg-cobalt hover:bg-cobalt-hover px-6 " />

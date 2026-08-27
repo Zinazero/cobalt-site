@@ -39,37 +39,37 @@ export const Testimonials = () => {
 
   return (
     <>
-    <div className="h-14 bg-linear-to-b from-light to-white" />
-    <section id="testimonials" className="flex flex-col items-center py-30 bg-white px-6">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl text-cobalt font-bold">
-          SME-Focused Solutions Backed by Real-World Experience
-        </h2>
-      </div>
-      <div className="grid md:grid-cols-2 gap-10 mx-auto">
-        {quoteArray.map(({ quote, name, title, location }, index) => {
-          const isLastOdd = quoteArray.length % 2 === 1 && index === quoteArray.length - 1;
-          return (
-            <div
-              key={name}
-              className={`bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between max-w-xl ${
-                isLastOdd ? 'col-span-2 justify-self-center mx-auto' : ''
-              }`}
-            >
-              <p className="italic text-grey-dark! mb-4">{quote}</p>
-              <div>
-                <p className="font-bold text-dark!">{name}</p>
-                <p className="text-sm">
-                  {title}
-                  {location ? `, ${location}` : ''}
-                </p>
+      <div className="h-14 bg-linear-to-b from-light to-white" />
+      <section id="testimonials" className="flex flex-col items-center py-30 bg-white px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl text-cobalt font-bold">
+            SME-Focused Solutions Backed by Real-World Experience
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-10 mx-auto">
+          {quoteArray.map(({ quote, name, title, location }, index) => {
+            const isLastOdd = quoteArray.length % 2 === 1 && index === quoteArray.length - 1;
+            return (
+              <div
+                key={name}
+                className={`bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col justify-between max-w-xl ${
+                  isLastOdd ? 'col-span-2 justify-self-center mx-auto' : ''
+                }`}
+              >
+                <p className="italic text-grey-dark! mb-4">{quote}</p>
+                <div>
+                  <p className="font-bold text-dark!">{name}</p>
+                  <p className="text-sm">
+                    {title}
+                    {location ? `, ${location}` : ''}
+                  </p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-    <div className="h-14 bg-linear-to-t from-light to-white" />
+            );
+          })}
+        </div>
+      </section>
+      <div className="h-14 bg-linear-to-t from-light to-white" />
     </>
   );
 };
