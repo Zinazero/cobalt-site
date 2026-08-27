@@ -1,4 +1,4 @@
-import { CobaltAxis } from '@/sections/CobaltAxis';
+import { Axis } from '@/sections/Axis';
 import { Consulting } from '@/sections/Consulting';
 import { Contact } from '@/sections/Contact';
 import { Hero } from '@/sections/Hero';
@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-light">
       <Hero />
-      <CobaltAxis />
+      <Axis />
       <Consulting />
       <Testimonials />
       <Contact />
