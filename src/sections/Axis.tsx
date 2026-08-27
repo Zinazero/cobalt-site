@@ -52,7 +52,7 @@ export const Axis = () => {
   return (
     <>
       <div className="h-14 bg-linear-to-b from-light to-white" />
-      <section id="cobalt-axis" className="min-h-screen bg-white py-16 px-6">
+      <section id="cobalt-axis" className="min-h-screen bg-white py-32 px-6">
         <div className="max-w-450 mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-6xl text-cyan font-bold text-shadow-md">Axis</h2>

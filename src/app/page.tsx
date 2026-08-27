@@ -1,5 +1,5 @@
 import { Axis } from '@/sections/Axis';
-import { Consulting } from '@/sections/Consulting';
+import { Extension } from '@/sections/Extension';
 import { Contact } from '@/sections/Contact';
 import { Hero } from '@/sections/Hero';
 import { Testimonials } from '@/sections/Testimonials';
@@ -9,7 +9,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-light">
       <Hero />
       <Axis />
-      <Consulting />
+      <Extension />
       <Testimonials />
       <Contact />
     </main>
