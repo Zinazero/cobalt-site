@@ -43,11 +43,11 @@ export const Hero = () => {
             else’s system.
           </p>
           <div className="flex justify-center lg:justify-start gap-4">
-            <DemoButton className="bg-cobalt hover:bg-cobalt-hover px-6 " />
+            <DemoButton className="bg-cobalt hover:bg-green px-6 " />
             <Button asChild>
               <a
                 href="#consulting"
-                className={` !bg-white !text-cobalt border !border-cobalt px-6 py-3 rounded-md hover:!bg-cobalt-hover hover:!border-cobalt-hover hover:!text-white transition`}
+                className={`!bg-white !text-cobalt border !border-cobalt px-6 py-3 rounded-md hover:!bg-green hover:!border-green hover:!text-white transition`}
               >
                 See How It Works
               </a>
